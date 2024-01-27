@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-6.2.1-web/css/all.min.css">
+    <title>e-Afrika TV</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+     color: #ffffff;
+}
+
+/* Style the header */
+.flex-div{
+    display: flex;
+    align-items: center;
+}
+nav{
+            padding: 10px 2%;
+            justify-content: space-between;
+            background: rgb(18, 12, 56);
+            color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: #878787 5px solid;
+        }
+        .nav-right a{
+            width: 25px;
+            margin-right: 25px;
+        }
+        .nav-right img{
+            width: 25px;
+            margin-right: 25px;
+        }
+        .nav-middle .search-box{
+            border: 1px solid #ccc;
+            margin-right: 15px;
+            padding: 8px 12px;
+            border-radius: 0 12px 12px 0;
+            background: #ffffff;
+        }
+        .nav-middle .search-box input{
+            width: 400px;
+            border: 0;
+            outline: 0;
+            background: #ffffff;
+        }
+        .nav-middle .search-box img{
+            width: 15px;
+        }
+        .nav-middle .drop-down{
+            color: #5a5a5a;
+        }
+        .nav-middle{
+            display: flex;
+            align-items: center;
+        }
+        .current{
+            border: rgb(0, 147, 252) 3px solid;
+            padding: 5px;
+        }
+        span {
+            color: rgb(0, 147, 252);
+        }
+
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Create three unequal columns that sits next to each other */
+.column {
+  padding: 10px;
+  /* height: 300px; Should be removed. Only for demonstration */
+}
+
+/* Left and right column */
+.sidebar{
+            background: #ccc;
+            /* flex-basis: 10%; */
+            height: 800px;
+            /* position: fixed; */
+            /* /*top: 0; */
+            padding-left: 2%;
+            padding-top: 10px;
+        }
+        .short-links a i{
+            width: 10px;
+            margin-right: 15px;
+        }
+        .short-links a{
+            color: black;
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            width: fit-content;
+            flex-wrap: wrap;
+        }
+        .short-links-2 h1{
+            font-size: 20px;
+        }
+        .short-links-2 a i{
+            width: 10px;
+            margin-right: 15px;
+            color: rgb(0, 147, 252);;
+        }
+        .short-links-2 a{
+            color: black;
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            width: fit-content;
+            flex-wrap: wrap;
+        }
+        .short-links-3 a{
+            color: black;
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            width: fit-content;
+            flex-wrap: wrap;
+            margin-left: 30%;
+        }
+        .short-links-4 a i{
+            width: 10px;
+            margin-right: 15px;
+            color: black;
+        }
+        .short-links-4 a{
+            color: black;
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            width: fit-content;
+            flex-wrap: wrap;
+        }
+        .sidebar hr{
+            border: 0;
+            height: 1px;
+            width: 95%;
+            background: #ffffff;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+.column.left {
+   -webkit-flex: 2;
+   -ms-flex: 2;
+   flex: 2;
+}
+.column.right {
+   -webkit-flex: 1;
+   -ms-flex: 1;
+   flex: 1;
+}
+.side-video-list img{
+    width: 100%;
+}
+.side-video-list .vid-info{
+    line-height: 0.2;
+}
+.side-video-list .vid-info a{
+    color: #000;
+    font-weight: 2;
+}
+.right-sidebar hr{
+    background: #000;
+}
+.right-sidebar .h1{
+    margin-bottom: -12px;
+    font-size: 20px;
+    margin-top: -5px;
+}
+
+.vue{
+    color: #878787;
+}
+
+/* Middle column */
+.column.middle {
+  -webkit-flex: 6;
+  -ms-flex: 6;
+  flex: 6;
+}
+.play-video video{
+    width: 100%;
+}
+.play-video .tags{
+    margin-left: 10px;
+}
+.play-video .tags  a{
+    color: #000;
+    font-size: 20px;
+}
+.play-video .tags  p{
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+
+.play-video .tags2  a{
+    color: #000;
+    float: right;
+    margin-left: 15px;
+    color: #878787;
+    font-size: 15px;
+}
+.play-video hr{
+    background: #000;
+    margin-top: 35px;
+}
+.play-video .abonner{
+    margin-left: auto;
+    margin-right: 0;   
+    float: right;
+    font-size: 20px;
+    border: 5px solid #070bf7;
+    background: #070bf7;
+    color: #ffffff;
+}
+.play-video .comment{
+    display: flex;
+    margin-bottom: 5px;
+}
+.play-video .comment img{
+    width: 9%;
+    height: 9%;
+    margin-right: 10px;
+}
+.play-video .comment .text{
+    margin-top: -30px;
+}
+.play-video .comment .text p{
+    margin-top: -20px;
+}
+.play-video .comment1{
+    display: flex;
+}
+.play-video .comment1 img{
+    width: 7%;
+    height: 7%;
+    margin-right: 10px;
+}
+.play-video .comment1 .text1{
+    margin-top: -30px;
+}
+.play-video .comment1 .text1 p{
+    margin-top: -20px;
+}
+/* Style the footer */
+.footer {
+    display: flex;
+    background-color: #ffffff;
+  }
+  
+  .column {
+    flex: 1;
+    margin: 10px;
+  }
+  
+  h4 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #333333;
+  }
+  
+.footer ul, li {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333333;
+    list-style: none;
+  }
+  
+  form, input, button {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  .footer input {
+    width: 80%;
+    padding: 0;
+    border: 1px solid #cccccc;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    width: 15%;
+    padding: 5px;
+    border: none;
+    background-color: #333333;
+    color: white;
+  }
+  .footer ::placeholder {
+    background: #c9c9c9;
+    width: 70px;
+    border: 1px solid #cccccc;
+    color: #000000;
+    padding-left: 20px;
+  }
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+    <div class="header">
+        <nav class="flex-div">
+            <div class="nav-left">
+                <h2><span>e</span>-Africa <span>TV</span></h2>
+            </div>
+            <div class="nav-middle">
+                <div class="search-box flex-div">
+                    <input type="text" placeholder="Rechercher sur e-Afrika TV">
+                    <img src="img/search.png" alt="">
+                </div>
+                <div class="drop-down">
+                    <select>
+                    <option value="volvo">Choisir un Pays</option>
+                    <option value="saab">Cameroon</option>
+                    <option value="mercedes">Belgium</option>
+                    <option value="audi">Canada</option>
+                    </select>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="#">Hello Gilles Fabrizio</a>
+                <a href=""><img src="img/user.jpg" alt=""></a>
+                <a href="#">Langue</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="column left sidebar">
+                <div class="short-links">
+                    <a href="#"><i class="fa-solid fa-house"></i> Accueil</a>
+                    <a href="#"><i class="fa-solid fa-square-plus"></i> Nouveautés</a>
+                    <a href="#"><i class="fa-solid fa-play"></i> En direct</a>
+                    <a href="#"><i class="fa-solid fa-clock"></i> Historique</a>
+                    <hr>
+                </div>
+                <div class="short-links-2">
+                    <h1 class="h1"><Span>LE MEILLEUR DE e-Afrika TV</Span></h1>
+                    <a href="#"><i class="fa-solid fa-video"></i> Vidéos Favorites</a>
+                    <a href="#"><i class="fa-solid fa-newspaper"></i> A Regarder Plus Tard</a>
+                    <a href="#"><i class="fa-solid fa-circle-play"></i> Recommandations</a>
+                    <a href="#"><i class="fa-solid fa-play"></i> Abonnements</a>
+                    <a href="#"><i class="fa-solid fa-radio"></i> Les Chaines e-AfrikaTV</a>
+                    <hr>
+                </div>
+                <div class="short-links-2">
+                    <h1 class="h1"><Span>MES ABONNEMENTS</Span></h1>
+                    <a href="#"><i class="fa-solid fa-video"></i> Télécoms</a>
+                    <a href="#"><i class="fa-solid fa-newspaper"></i> Agro-alimentaire</a>
+                    <a href="#"><i class="fa-solid fa-circle-play"></i> BTP</a>
+                    <a href="#"><i class="fa-solid fa-play"></i> BTP</a>
+                    <hr>
+                </div>
+                <div class="short-links-3">
+                    <a href="#" class="current">Se Connecter</a>
+                    <hr>
+                </div>
+                <div class="short-links-4">
+                    <a href="#"><i class="fa-solid fa-gear"></i> Paramètres</a>
+                    <a href="#"><i class="fa-solid fa-circle-info"></i> Aide</a>
+                    <a href="#"><i class="fa-solid fa-message"></i> Votre Avis</a>
+                </div>
+        </div>
+        <div class="column middle play-video">
+            <video controls autoplay>
+                <source src="vid/Dry_running_algorithms_with_trace_tables(360p).mp4" type="video/mp4">
+            </video>
+
+
+            <div class="tags">
+                <a href="">E-Afrika Cameroon - The nex teep</a>
+                <p class="vue">100 M de Vues</p>
+            </div>
+            <div class="tags2">
+                
+                <a href="#"><i class="fa-solid fa-folder-plus"></i></a>
+                <a href="#"><i class="fa-solid fa-share"></i> Partager</a>
+                <a href="#"><i class="fa-solid fa-thumbs-down"></i> 0</a>
+                <a href="#"><i class="fa-solid fa-thumbs-up"></i> 100 M</a>
+                
+            </div>
+            <hr>
+            <h1 class="abonner">S’ABONNER 100 M</h1>
+            <div class="banner">
+                <h2 class="h1">Commentaires</h2>
+            </div>
+            <div class="comment">
+                <img src="img/user.jpg" alt="">
+                <div class="text">
+                <h4>Lorem ipsum</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi</p>
+                    </div>
+            </div>
+            <div class="comment1">
+                <img src="img/user.jpg" alt="">
+                <div class="text1">
+                <h4>Lorem ipsum</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi</p>
+                    </div>
+            </div>
+            
+        </div>
+        
+        <div class="column right right-sidebar">
+            <p class="h1">A Suivre</p>
+            <div class="side-video-list">
+                <p><a href="" class="small-thumbnail"><img src="img/user.jpg" ></a></p>
+                <div class="vid-info">
+                    <a href="">E-Afrika Cameroon -</a>
+                    <p>The nex teep</p>
+                    <p class="vue">100 M de Vues</p>
+                </div>
+            </div>
+            <hr>
+            <div class="side-video-list">
+                <p><a href="" class="small-thumbnail"><img src="img/user.jpg" ></a></p>
+                <div class="vid-info">
+                    <a href="">E-Afrika Cameroon -</a>
+                    <p>The nex teep</p>
+                    <p class="vue">100 M de Vues</p>
+                </div>
+            </div>
+            <hr>
+            <div class="side-video-list">
+              <p><a href="" class="small-thumbnail"><img src="img/user.jpg"></a></p>
+              <div class="vid-info">
+                    <a href="">E-Afrika Cameroon -</a>
+                    <p>The nex teep</p>
+                    <p class="vue">100 M de Vues</p>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <div class="footer">
+            <div class="column">
+              <h4>A propos d'e-Afrika</h4>
+              <ul>
+                <li>Qui Sommes-nous?</li>
+                <li>Conditions Générales d'Utilisation</li>
+                <li>Politique de Confidentialité</li>
+              </ul>
+            </div>
+            <div class="column">
+              <h4>Suivez-Nous</h4>
+              <ul>
+                <li>Youtube</li>
+                <li>Instagram</li>
+                <li>Facebook</li>
+                <li>Twitter</li>
+                <li>LinkedIn</li>
+              </ul>
+            </div>
+            <div class="column">
+              <h4>Contactez-Nous</h4>
+              <ul>
+                <li>e-mail: data@e-afrika.com</li>
+                <li>Hotline: +239 999 89 94 03</li>
+              </ul>
+            </div>
+            <div class="column">
+              <h4>Alertes</h4>
+              <form>
+                <input type="email" name="email" placeholder="e-mail">
+                <input type="tel" name="phone" placeholder="Phone">
+              </form>
+            </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-6.2.1-web/css/all.min.css">
+    <title>e-Afrika TV</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: #ffffff;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        img{
+            cursor: pointer;
+        }
+        h2{
+            font-size: 25px;
+        }
+        .flex-div{
+            display: flex;
+            align-items: center;
+        }
+        nav{
+            padding: 10px 2%;
+            justify-content: space-between;
+            background: rgb(18, 12, 56);
+            color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: #878787 5px solid;
+        }
+        .nav-right a{
+            width: 25px;
+            margin-right: 25px;
+        }
+        .nav-right img{
+            width: 25px;
+            margin-right: 25px;
+        }
+        .nav-middle .search-box{
+            border: 1px solid #ccc;
+            margin-right: 15px;
+            padding: 8px 12px;
+            border-radius: 0 12px 12px 0;
+            background: #ffffff;
+        }
+        .nav-middle .search-box input{
+            width: 400px;
+            border: 0;
+            outline: 0;
+            background: #ffffff;
+        }
+        .nav-middle .search-box img{
+            width: 15px;
+        }
+        .nav-middle .drop-down{
+            color: #5a5a5a;
+        }
+        .nav-middle{
+            display: flex;
+            align-items: center;
+        }
+        .current{
+            border: rgb(0, 147, 252) 3px solid;
+            padding: 5px;
+        }
+        span {
+            color: rgb(0, 147, 252);
+        }
+
+        .column {
+            float: left;
+            padding: 10px;
+            height: 300px; /* Should be removed. Only for demonstration */
+        }
+        .sidebar  {
+            width: 20%;
+        }
+        .right-sidebar{
+            width: 5%;
+        }
+        .play-video {
+            width: 60%;
+        }
+
+        /* Clear floats after the columns */
+        .container.row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .sidebar{
+            background: #ccc;
+            /* flex-basis: 10%; */
+            height: 600px;
+            /* position: fixed; */
+            /* /*top: 0; */
+            padding-left: 2%;
+            padding-top: 10px;
+        }
+        .short-links a i{
+            width: 10px;
+            margin-right: 15px;
+        }
+        .short-links a{
+            color: black;
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            width: fit-content;
+            flex-wrap: wrap;
+        }
+        .short-links-2 h1{
+            font-size: 20px;
+        }
+        .short-links-2 a i{
+            width: 10px;
+            margin-right: 15px;
+            color: rgb(0, 147, 252);;
+        }
+        .short-links-2 a{
+            color: black;
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            width: fit-content;
+            flex-wrap: wrap;
+        }
+        .short-links-3 a{
+            color: black;
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            width: fit-content;
+            flex-wrap: wrap;
+            margin-left: 30%;
+        }
+        .short-links-4 a i{
+            width: 10px;
+            margin-right: 15px;
+            color: black;
+        }
+        .short-links-4 a{
+            color: black;
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            width: fit-content;
+            flex-wrap: wrap;
+        }
+        .sidebar hr{
+            border: 0;
+            height: 1px;
+            width: 95%;
+            background: #ffffff;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* .container{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .play-video{
+            flex-basis: ;
+        } */
+        .play-video.img{
+            
+        }
+    </style>
+</head>
+<body>
+    <nav class="flex-div">
+        <div class="nav-left">
+            <h2><span>e</span>-Africa <span>TV</span></h2>
+        </div>
+        <div class="nav-middle">
+            <div class="search-box flex-div">
+                <input type="text" placeholder="Rechercher sur e-Afrika TV">
+                <img src="img/search.png" alt="">
+            </div>
+            <div class="drop-down">
+                <select>
+                <option value="volvo">Choisir un Pays</option>
+                <option value="saab">Cameroon</option>
+                <option value="mercedes">Belgium</option>
+                <option value="audi">Canada</option>
+                </select>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="#">Hello Gilles Fabrizio</a>
+            <a href=""><img src="img/user.jpg" alt=""></a>
+            <a href="#">Langue</a>
+        </div>
+  </nav>
+
+  <div class="container play-container">
+    <div class="row">
+        <div class=" sidebar">
+            <div class="short-links">
+                <a href="#"><i class="fa-solid fa-house"></i> Accueil</a>
+                <a href="#"><i class="fa-solid fa-square-plus"></i> Nouveautés</a>
+                <a href="#"><i class="fa-solid fa-play"></i> En direct</a>
+                <a href="#"><i class="fa-solid fa-clock"></i> Historique</a>
+                <hr>
+            </div>
+            <div class="short-links-2">
+                <h1 class="h1"><Span>LE MEILLEUR DE e-Afrika TV</Span></h1>
+                <a href="#"><i class="fa-solid fa-video"></i> Vidéos Favorites</a>
+                <a href="#"><i class="fa-solid fa-newspaper"></i> A Regarder Plus Tard</a>
+                <a href="#"><i class="fa-solid fa-circle-play"></i> Recommandations</a>
+                <a href="#"><i class="fa-solid fa-play"></i> Abonnements</a>
+                <a href="#"><i class="fa-solid fa-radio"></i> Les Chaines e-AfrikaTV</a>
+                <hr>
+            </div>
+            <div class="short-links-2">
+                <h1 class="h1"><Span>MES ABONNEMENTS</Span></h1>
+                <a href="#"><i class="fa-solid fa-video"></i> Télécoms</a>
+                <a href="#"><i class="fa-solid fa-newspaper"></i> Agro-alimentaire</a>
+                <a href="#"><i class="fa-solid fa-circle-play"></i> BTP</a>
+                <a href="#"><i class="fa-solid fa-play"></i> BTP</a>
+                <hr>
+            </div>
+            <div class="short-links-3">
+                <a href="#" class="current">Se Connecter</a>
+                <hr>
+            </div>
+            <div class="short-links-4">
+                <a href="#"><i class="fa-solid fa-gear"></i> Paramètres</a>
+                <a href="#"><i class="fa-solid fa-circle-info"></i> Aide</a>
+                <a href="#"><i class="fa-solid fa-message"></i> Votre Avis</a>
+            </div>
+        </div>
+        <div class=" column play-video">
+            <video controls autoplay>
+                <source src="vid/Build An HTML5 Website With A Responsive Layout.mp4" type="video/mp4">
+              </video>
+        </div>
+        <div class=" column right-sidebar">
+            <h1 class="h1">A Suivre</h1>
+            <div class="side-video-list">
+                <a href="" class="small-thumbnail"><img src="img/user.jpg" ></a>
+                <div class="vid-info">
+                    <h2><a href="">E-Afrika Cameroon -</a></h2>
+                    <p>The nex teep Lorem ipsum dolor sit am et, consectetuer adipiscing elit, sed diam</p>
+                    <p class="vue">100 M de Vues</p>
+                </div>
+            </div>
+            <div class="side-video-list">
+                <a href="" class="small-thumbnail"><img src="img/user.jpg" ></a>
+                <div class="vid-info">
+                    <h2><a href="">E-Afrika Cameroon -</a></h2>
+                    <p>The nex teep Lorem ipsum dolor sit am et, consectetuer adipiscing elit, sed diam</p>
+                    <p class="vue">100 M de Vues</p>
+                </div>
+            </div>
+            <div class="side-video-list">
+              <a href="" class="small-thumbnail"><img src="img/user.jpg"</a>
+              <div class="vid-info">
+                    <h2><a href="">E-Afrika Cameroon -</a></h2>
+                    <p>The nex teep Lorem ipsum dolor sit am et, consectetuer adipiscing elit, sed diam</p>
+                    <p class="vue">100 M de Vues</p>
+                </div>
+            </div>
+            <div class="side-video-list">
+                <a href=""class="small-thumbnail"><img src="img/user.jpg"></a>
+                <div class="vid-info">
+                    <h2><a href="">E-Afrika Cameroon -</a></h2>
+                    <p>The nex teep Lorem ipsum dolor sit am et, consectetuer adipiscing elit, sed diam</p>
+                    <p class="vue">100 M de Vues</p>
+                </div>
+            </div>
+            <div class="side-video-list">
+                <a href="" class="small-thumbnail"><img src="img/user.jpg"></a>
+                <div class="vid-info">
+                    <h2><a href="">E-Afrika Cameroon -</a></h2>
+                    <p>The nex teep Lorem ipsum dolor sit am et, consectetuer adipiscing elit, sed diam</p>
+                    <p class="vue">100 M de Vues</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html> -->
